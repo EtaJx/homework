@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <title>注册</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/materialize.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="script/html5shiv.js"></script>
+    <script type="text/javascript" src="script/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<nav class="white">
+    <div class="nav-wrapper">
+        <a href="index.html" class="brand-logo">物流系统</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li class="black-text not" id="timeY">我是时间</li>
+            <li><a href="index.html">本站首页</a></li>
+            <li><a href="dongtai.html">物流动态</a></li>
+            <li><a href="zhishi.html">物流知识</a></li>
+            <li><a href="goodsInfo.html">货物信息</a></li>
+            <li><a href="carInfo.html">车辆信息</a></li>
+            <li><a href="enterInfo.html">企业信息</a></li>
+            <li><a href="badges.html">辅助工具</a></li>
+            <li><a href="javascript:;" id="logout">退出</a></li>
+            <li><a href="mag.html">后台管理</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+<div class="parallax-box">
+    <div class="container">
+        <div class="row">
+            <div class="col s6">
+                <div class="row">
+                    <div class="row col s12">
+                        <h5>用户注册</h5>
+                    </div>
+                    <form class="col s12" id="signup">
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <input placeholder="请输入注册账号，即你的邮箱" id="email" name="Email" type="text" class="validate" />
+                                    <label for="Email">用户名</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input placeholder="请输入登录密码" id="password" name="Password" type="password" class="validate" />
+                                    <label for="Email">密码</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input placeholder="请输入你的联系方式" id="phone" name="Phone" type="text" class="validate" />
+                                    <label for="Phone">电话</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col s12">
+                                    <input id="male" name="Sex" type="radio" value="男" checked />
+                                    <label for="male">男</label>
+                                    <input id="female" name="Sex" type="radio" value="女" />
+                                    <label for="female">女</label>
+                                </div>
+                            </div>
+                    </form>
+                    <button class="waves-effect waves-light red btn small" id="sub">注册</button>
+                </div>
+            </div>
+            <div class="col s6" style="margin-top:10%;">
+                <img src="img/by.png" />
+            </div>
+        </div>
+    </div>
+    <div class="parallax">
+        <img src="img/bg.jpg" />
+    </div>
+</div>
+
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="js/materialize.min.js"></script>
+<script type="text/javascript" src="js/init.js"></script>
+<script type="text/javascript" src="js/getCookie.js"></script>
+<script>
+    $(document).ready(function(){
+        $('.parallax').parallax();
+        var date = new Date();
+        var month = date.getMonth() + 1;
+        var day = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"][date.getDay()];
+        $('#timeY').text(date.getFullYear() + "年" + month + "月" + date.getDate() + "号" + day);
+    });
+</script>
+<!--表单验证-->
+<script>
+    $('#sub').bind('click',function(){
+        if(check()){
+            $.post('json.json',$('#signup').serialize(),function(data){
+                if(data.status == 200){
+                    alert('注册成功。请登录')
+                    window.location = "index.html";
+                }else{
+                    alert("对不起，未知错误");
+                }
+            })
+        }
+    });
+
+    function check(){
+        if($('#email').val().length == 0){
+            $('#email').focus();
+            return false;
+        }
+        if($('#password').val().length === 0){
+            $('#password').focus();
+            return false;
+        }
+        if($('#phone').val().length === 0){
+            $('#phone').focus();
+            return false;
+        }
+        return true;
+    }
+</script>
+<script type="text/javascript" src="js/logout.js"></script>
+</body>
+</html>

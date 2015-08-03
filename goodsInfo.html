@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <title>正在建设中</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/materialize.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="script/html5shiv.js"></script>
+    <script type="text/javascript" src="script/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<nav class="white">
+    <div class="nav-wrapper">
+        <a href="index.html" class="brand-logo">物流系统</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li class="black-text not" id="timeY">我是时间</li>
+            <li><a href="index.html">本站首页</a></li>
+            <li><a href="dongtai.html">物流动态</a></li>
+            <li><a href="zhishi.html">物流知识</a></li>
+            <li><a href="goodsInfo.html">货物信息</a></li>
+            <li><a href="carInfo.html">车辆信息</a></li>
+            <li><a href="enterInfo.html">企业信息</a></li>
+            <li><a href="badges.html">辅助工具</a></li>
+            <li><a href="javascript:;" id="logout">退出</a></li>
+            <li><a href="mag.html">后台管理</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+    <table class="hoverable">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>商品种类</th>
+            <th>商品名称</th>
+            <th>商品编号</th>
+            <th>单位</th>
+            <th>开始省市</th>
+            <th>城市</th>
+            <th>到达省市</th>
+            <th>到达城市</th>
+            <th>style？</th>
+            <th>运输时间</th>
+            <th>电话</th>
+            <th>Link</th>
+            <th>物流日期</th>
+            <th>标记</th>
+            <th>请求</th>
+            <th>用户名字</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+            <td>1</td>
+            <td>商品种类</td>
+            <td>商品名称</td>
+            <td>商品编号</td>
+            <td>单位</td>
+            <td>开始省市</td>
+            <td>城市</td>
+            <td>到达省市</td>
+            <td>到达城市</td>
+            <td>style?</td>
+            <td>运输时间</td>
+            <td>电话</td>
+            <td>Link</td>
+            <td>物流日期</td>
+            <td>标记</td>
+            <td>请求</td>
+            <td>用户名字</td>
+            <td><a class="waves-effect waves-light blue btn small modal-trigger " style="height:36px;margin:0 10px 0 0;" id="1" onclick="getId(this.id);" href="#info">修改</a><a class="waves-effect waves-light red btn small" style="height:36px;" onclick="delInfo();">删除</a></td>
+        </tr>
+        </tbody>
+    </table>
+
+<div id="info" class="modal" >
+    <div class="modal-content">
+        <h4>详细信息</h4>
+        <div class="row">
+            <div class="col s12">
+                <div class="row">
+                    <form class="col s12" id="changeInfo">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="请输入商品种类" id="email" name="GoodsStyle" type="text" class="validate" />
+                                <label for="GoodsStyle">商品种类</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="请输入名称" id="goodsname" name="GoodsName" type="text" class="validate" />
+                                <label for="GoodsName">名称</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="请输入编号" id="goodsnumber" name="GoodsNumber" type="text" class="validate" />
+                                <label for="GoodsNumber">编号</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="请输入商品单位" id="goodsunit" name="GoodsUnit" type="text" class="validate" />
+                                <label for="GoodsUnit">商品单位</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="请输入发货省市" id="startprovince" name="StartProvince" type="text" class="validate" />
+                                <label for="StartProvince">发货省市</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="请输入发货城市" id="startcity" name="StartCity" type="text" class="validate" />
+                                <label for="StartCity">发货城市</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="请输入送达省市" id="endprovince" name="EndProvince" type="text" class="validate" />
+                                <label for="EndProvince">送达省市</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="请输入送达城市" id="endcity" name="EndCity" type="text" class="validate" />
+                                <label for="EndCity">送达城市</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="请输入style?" id="style" name="Style" type="text" class="validate" />
+                                <label for="Style">style？</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="请输入运输时间" id="transporttime" name="TransporTtime" type="text" class="validate" />
+                                <label for="TransporTtime">运输时间"</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="请输入你的联系电话" id="phone" name="Phone" type="text" class="validate" />
+                                <label for="Phone">电话</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="请输入你的联系" id="link" name="Link" type="text" class="validate" />
+                                <label for="Link">联系</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="请输入发货时间" id="issuedate" name="Issuedate" type="text" class="validate" />
+                                <label for="Issuedate">发货时间</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="请输入注意事项" id="remark" name="Remark" type="text" class="validate" />
+                                <label for="Remark">注意事项</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="请输入需求" id="request" name="Request" type="text" class="validate" />
+                                <label for="Request">需求</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="请输入名字" id="username" name="Username" type="text" class="validate" />
+                                <label for="Username">名字</label>
+                            </div>
+                        </div>
+                    </form>
+                    <button class="waves-effect waves-light red btn small" id="sub">提交</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">关闭</a>
+    </div>
+</div>
+
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="js/materialize.min.js"></script>
+<script type="text/javascript" src="js/init.js"></script>
+<script type="text/javascript" src="js/getCookie.js"></script>
+<script>
+    $(document).ready(function() {
+                $('.parallax').parallax();
+                var date = new Date();
+                var month = date.getMonth() + 1;
+                var day = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"][date.getDay()];
+                $('#timeY').text(date.getFullYear() + "年" + month + "月" + date.getDate() + "号" + day);
+                $.ajax({
+                    url: "json.php",
+                    data: "",
+                    dataType: "json",
+                    method: "GET",
+                    success: function (data) {
+                        if (data != null) {
+                            loadinfo(data);
+                        }
+                    },
+                    error: function () {
+                        alert('请求失败');
+                    }
+                });
+            }
+    );
+    $('.modal-trigger').leanModal();
+
+    function loadinfo(data){
+        $("tbody").append(function(){
+            var str ="<tr>" +
+                    "<td>"+data.ID+"</td>" +
+                    "<td>"+data.GoodsStyle+"</td>" +
+                    "<td>"+data.GoodsName+"</td>" +
+                    "<td>"+data.GoodsNumber+"</td>" +
+                    "<td>"+data.GoodsUnit+"</td>" +
+                    "<td>"+data.StartProvince+"</td>" +
+                    "<td>"+data.StartCity+"</td>" +
+                    "<td>"+data.EndProvince+"</td>" +
+                    "<td>"+data.EndCity+"</td>" +
+                    "<td>"+data.Style+"</td>" +
+                    "<td>"+data.TransporTtime+"</td>" +
+                    "<td>"+data.Phone+"</td>" +
+                    "<td>"+data.Link+"</td>" +
+                    "<td>"+data.Issuedate+"</td>" +
+                    "<td>"+data.Remark+"</td>" +
+                    "<td>"+data.Request+"</td>" +
+                    "<td>"+data.Username+"</td>" +
+                    "<td><a class=\"waves-effect waves-light blue btn small modal-trigger \" style=\"height:36px;margin:0 10px 0 0;\" id=\""+data.id+"\" onclick=\"getId(this.id);\" href=\"#info\">修改</a><a class=\"waves-effect waves-light red btn small\" style=\"height:36px;\" onclick=\"delInfo();\">删除</a></td>" +
+                    "</tr>";
+            return str;
+        });
+        $('.modal-trigger').leanModal();
+    }
+
+    function getId(id){
+        window.gid = id;
+        change();
+    }
+
+    function change(){
+        $.ajax({
+            url:"json.php",
+            data:"id="+window.gid,
+            dataType:"json",
+            method:"post",
+            success:function(data){
+                if(data!= 200){
+                    loadForm(data);
+                }
+            },
+            error:function(){
+                alert('修改失败');
+                return false;
+            }
+        });
+    }
+    $("#"+window.gid).bind('click',function(){
+        $.ajax({
+            url:"json.php",
+            data:$('#changeInfo').serialize(),
+            dataType:"json",
+            method:"POST",
+            success:function(data){
+                if(data.status == 200){
+                    alert("修改成功");
+                    window.location= "goodInfo.html";
+                }
+            },
+            error:function(){
+                alert('请求失败');
+            }
+        });
+    });
+    function loadForm(data){
+        $('#GoodsStyle').val(data.GoodsStyle);
+        $('#goodsname').val(data.GoodsName);
+        $('#goodsnumber').val(data.GoodsNumber);
+        $('#goodsunit').val(data.GoodsUnit);
+        $('#startprovince').val(data.StartProvince);
+        $('#startcity').val(data.StartCity);
+        $('#endprovince').val(data.EndProvince);
+        $('#endcity').val(data.EndCity);
+        $('#style').val(data.Style);
+        $('#transporttime').val(data.TransporTtime);
+        $('#phone').val(data.Phone);
+        $('#link').val(data.Link);
+        $('#issuedate').val(data.Issuedate);
+        $('#remark').val(data.Remark);
+        $('#request').val(data.Request);
+        $('#username').val(data.Username);
+    }
+    function delInfo(){
+        $.ajax({
+            url:"json.php",
+            data:"id="+window.gid,
+            dataType:"json",
+            method:"post",
+            success:function(data){
+                if(data == 200){
+                    alert('删除成功！');
+                }
+            },
+            error:function(){
+                return false;
+            }
+        });
+    }
+</script>
+<script type="text/javascript" src="js/logout.js"></script>
+</body>
+</html>
